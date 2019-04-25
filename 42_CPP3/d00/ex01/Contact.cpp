@@ -50,16 +50,16 @@ bool		Contact::isEmpty(void)
 void		Contact::printContact(void)
 {
 	std::cout << HPURPLE;
-	std::cout << "First Name:		" << this->getFirstName() << std::endl;
-	std::cout << "Last Name:		" << this->getLastName() << std::endl;
-	std::cout << "Nickname:			" << this->getNickName() << std::endl;
-	std::cout << "Intra:			" << this->getLogin() << std::endl;
+	std::cout << "First Name: " << this->getFirstName() << std::endl;
+	std::cout << "Last Name: " << this->getLastName() << std::endl;
+	std::cout << "Nickname: " << this->getNickName() << std::endl;
+	std::cout << "Intra: " << this->getLogin() << std::endl;
 	std::cout << "Postal Address:	" << this->getPostalAddress() << std::endl;
-	std::cout << "Email:			" << this->getEmail() << std::endl;
-	std::cout << "Phone:			" << this->getPhone() << std::endl;
-	std::cout << "Birthday:			" << this->getBirthday() << std::endl;
-	std::cout << "Favorite Meal:	" << this->getFavoriteMeal() << std::endl;
-	std::cout << "Underwear Color: 	" << this->getUnderwearColor() << std::endl;
+	std::cout << "Email: " << this->getEmail() << std::endl;
+	std::cout << "Phone: " << this->getPhone() << std::endl;
+	std::cout << "Birthday: " << this->getBirthday() << std::endl;
+	std::cout << "Favorite Meal: " << this->getFavoriteMeal() << std::endl;
+	std::cout << "Underwear Color: " << this->getUnderwearColor() << std::endl;
 	std::cout << "Darkest Secret:	" << this->getDarkestSecret() << std::endl;
 	std::cout << RESET;
 }
@@ -177,4 +177,3 @@ void			Contact::setDarkestSecret(std::string const ds)
 {
 	this->_darkestSecret = ds;
 }
-
