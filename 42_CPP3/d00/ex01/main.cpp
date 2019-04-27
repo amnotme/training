@@ -11,12 +11,8 @@
 /* ************************************************************************** */
 
 #include "Colors.hpp"
-#include "Phonebook.hpp"
 #include "Contact.hpp"
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <cctype>
+#include "Phonebook.hpp"
 
 std::string down(std::string str)
 {

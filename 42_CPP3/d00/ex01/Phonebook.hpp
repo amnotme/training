@@ -15,10 +15,6 @@
 
 # define MAX 8
 # include "Contact.hpp"
-# include <iostream>
-# include <iomanip>
-# include <string>
-# include <sstream>
 
 class Phonebook
 {

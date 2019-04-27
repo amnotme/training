@@ -14,8 +14,11 @@
 # define CONTACT_HPP
 
 # include "Colors.hpp"
-# include <string>
+# include <cctype>
 # include <iostream>
+# include <iomanip>
+# include <sstream>
+# include <string>
 
 class Contact
 {
@@ -25,7 +28,7 @@ class Contact
 			Contact(Contact const & src);
 			Contact &operator=(Contact const & rhs);
 			//Add your public methods below here
-		
+
 			bool	isEmpty(void);
 			void	printContact(void);
 
