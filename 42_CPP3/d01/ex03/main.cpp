@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "Colors.hpp"
 #include "Zombie.hpp"
 #include "ZombieHorde.hpp"
 
