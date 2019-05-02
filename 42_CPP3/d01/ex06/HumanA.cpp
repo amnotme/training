@@ -12,9 +12,9 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon weapon) :
+HumanA::HumanA(std::string name, Weapon &weapon) :
 _name(name),
-_weapon(weapon)
+_weapon(&weapon)
 {
   return ;
 }
@@ -41,6 +41,6 @@ std::string   HumanA::getName(void) const
 void          HumanA::attack(void)
 {
   std::cout << BRED;
-  std::cout << this->getName() << " attacks with his " << this->_weapon.getType();
+  std::cout << this->getName() << " attacks with his " << this->_weapon->getType();
   std::cout << RESET << std::endl;
 }

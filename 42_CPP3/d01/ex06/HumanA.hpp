@@ -19,7 +19,7 @@ class HumanA
 {
   public:
 
-    HumanA(std::string name, Weapon weapon);
+    HumanA(std::string name, Weapon &weapon);
     ~HumanA(void);
     HumanA(HumanA const & src);
     HumanA &operator=(HumanA const & rhs);
@@ -28,7 +28,7 @@ class HumanA
     void               attack(void);
   private:
     std::string       _name;
-    Weapon            _weapon;
+    Weapon            *_weapon;
 
 };
 
