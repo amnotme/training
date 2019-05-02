@@ -6,7 +6,7 @@
 /*   By: leopoldohernandez <Leo@42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/27 20:27:41 by leopoldoh         #+#    #+#             */
-/*   Updated: 2019/04/27 21:42:49 by leopoldoh        ###   ########.fr       */
+/*   Updated: 2019/05/01 22:52:26 by leopoldoh        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void		fileOpenCheck(std::string arg)
 
 void		stringsCheck(char *s1, char *s2)
 {
-	if (s1 == "" || s2 == "")
+	if ( std::strcmp(s1,"") == 0 || std::strcmp(s2, "") == 0)
 	{
 		std::cerr << "One or more of your strings are empty" << std::endl;
 		exit(3);
@@ -52,29 +52,24 @@ int		main(int argc, char **argv)
 	numArgsCheck(argc);
 	fileOpenCheck(std::string(argv[1]));
 	stringsCheck(argv[2], argv[3]);
-	if (argc == 4)
+
+	std::string fileName = std::string(argv[1]);	
+	std::string line;
+	std::ifstream file(fileName);
+	std::ofstream ofile(fileName + ".replace");
+	std::ostringstream read(fileName);
+	std::string s1 = std::string(argv[2]);
+	std::string s2 = std::string(argv[3]);		
+
+	read << file.rdbuf();
+	std::string buffed = read.str();
+
+	while (buffed.find(s1) != std::string::npos)
 	{
-		std::string fileName = std::string(argv[1]);	
-		std::string line;
-		std::ifstream file(fileName);
-		std::ofstream ofile(fileName + ".replace");
-		std::string s1 = std::string(argv[2]);
-		std::string s2 = std::string(argv[3]);		
-
-
-		if (file.is_open())
-		{
-			while (getline(file, line))
-			{
-				std::cout << line << std::endl;
-				ofile << line << std::endl;
-			}
-		}
-		ofile.close();
-		file.close();
-		std::cout << s1 << "-----------" << s2 << std::endl;
+		buffed.replace(buffed.find(s1), s1.length(), s2);
 	}
-	else
-		std::cout << "Unable to open up file" << std::endl;
+	ofile << buffed << std::endl;
+	ofile.close();
+	file.close();
 	return (0);
 }
